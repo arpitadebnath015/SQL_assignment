@@ -67,9 +67,13 @@ alter table products change column product_id int product_id primary KEY;
 alter table products change column price decimal(10,2) price default(50);
 
 #7.
-#Answer- The aspects of the tables are not matching. Two of them are about school ad on is about product.
+select s.student_name , c.class_name from students as s inner join classes as c on s.class_is = c.class_id;
 
-#8. missing in the question
+#8. select o.order_id, c.customer_name, p.product_name 
+from orders as o inner join customers as c 
+on o.customer_id = c,customer_id
+left join products as p
+ on p.order_id = o.order_id;
 
 #9.
 select sum(amount),product_name
